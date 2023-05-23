@@ -25,7 +25,7 @@ class WSJCrawler
     loginpage = @mechagent.get('http://wsj.com')
     loginForm = loginpage.form('login_form')
     loginForm.field_with(:name=>'user').value = 'chris.p.wood@me.com'
-    loginForm.field_with(:name=>'password').value = 'wallStreetWood'
+    loginForm.field_with(:name=>'password').value = ENV["WSJ"]
     newspage = loginForm.submit()
 
     # search
